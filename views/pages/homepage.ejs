@@ -35,6 +35,7 @@ $(document).ready(function(){
           <p>
             req.getLocale() = <span>'<%= lang %>'</span>
           </p>
+          <small><i>(filled via ejs)</i></small>
         </div>
       </li>
       <li class="clearfix">
@@ -44,11 +45,12 @@ $(document).ready(function(){
           <p>
             req.getLocale() = <span id="socket-response"></span>
           </p>
+          <small><i>(filled via io.socket)</i></small>
         </div>
       </li>
       <li class="clearfix">
         <figure style="padding-left: 30px;">
-          <figcaption><h3>Results for request with <code>Accept-Language: cs,sk;q=0.8,en-US;q=0.5,en;q=0.3</code>:</h3></figcaption>
+          <figcaption><h3>Results for request with <code>Accept-Language: cs,sk;q=0.8,en-US;q=0.5,en;q=0.3</code>:</h3><small><i>(results of above how I see this page with defaultLocale: 'en')</i></small></figcaption>
           <img src="/images/czech-results.png" style="border: 2px dashed #999999; margin-top: 5px;"/>
         </figure> 
       </li>
