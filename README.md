@@ -3,6 +3,8 @@
 a [Sails v1](https://sailsjs.com) application
 
 
+Related with: https://github.com/balderdashy/sails/issues/5305
+
 ### Reason of this test:
 socket request always returns default language code.
 
