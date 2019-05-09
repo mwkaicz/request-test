@@ -4,7 +4,7 @@ a [Sails v1](https://sailsjs.com) application
 
 
 ### Reason of this test:
-socket request returns another Language code than normal request.
+socket request always returns default language code.
 
 ### Changes in code:
 
