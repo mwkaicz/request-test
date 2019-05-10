@@ -57,7 +57,7 @@ socket request always returns default language code.
 + look what's your prefered browser language and then setup some another in i18n.js as defaultLocale (not identical with your browser language)
 
 ### Exception:
-+ both values in first two rows should be the same because they are obtained from the same page - but they are different if ``defaultLocale`` is not same as ``Accept-Language`` :/
++ both values in first two rows should be the same because they are obtained from the same page - but they are different if ``defaultLocale`` is not same as prefered ``Accept-Language`` :/
 
 ### Problem:
 + io.socket always returns defaultLocale instead of browser language
