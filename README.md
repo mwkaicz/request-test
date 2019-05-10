@@ -22,9 +22,7 @@ socket request always returns default language code.
 
 ### Life cycle of app: 
 + http get '/'  
-  *- returns HP with ``{lang: req.getLocale()}``*
-
-  *action reply:*
+  *- returns ejs value on HP via action:*
   ```
   exits: {
     success: {
@@ -42,9 +40,7 @@ socket request always returns default language code.
   });
 });`` 
 
-  *- returns json with ``{lang: req.getLocale()}``*
-  
-  *action reply:*
+  *- returns json via action:*
   ```
   exits: {
     succsess: {
