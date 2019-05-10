@@ -5,8 +5,14 @@ a [Sails v1](https://sailsjs.com) application
 
 Related with: https://github.com/balderdashy/sails/issues/5305
 
-### Reason of this test:
-socket request always returns default language code.
+### Problem:
++ io.socket always returns defaultLocale instead of browser language
+
+### How to reproduce this problem:
++ look what's your prefered browser language and then setup some another in i18n.js as defaultLocale (not identical with your browser language)
+
+### Exception:
++ both values in first two rows should be the same because they are obtained from the same page - but they are different if ``defaultLocale`` is not same as prefered ``Accept-Language`` :/
 
 ### Changes in code:
 
@@ -52,16 +58,6 @@ socket request always returns default language code.
     return exits.success({lang: this.req.getLocale()});
   }
   ```
-
-### How to reproduce this problem:
-+ look what's your prefered browser language and then setup some another in i18n.js as defaultLocale (not identical with your browser language)
-
-### Exception:
-+ both values in first two rows should be the same because they are obtained from the same page - but they are different if ``defaultLocale`` is not same as prefered ``Accept-Language`` :/
-
-### Problem:
-+ io.socket always returns defaultLocale instead of browser language
-
 
 This app was originally generated on Thu May 09 2019 07:40:44 GMT+0200 (Central Europe Daylight Time) using Sails v1.1.0.
 
