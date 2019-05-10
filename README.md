@@ -24,6 +24,18 @@ socket request always returns default language code.
 + http get '/'  
   *- returns HP with ``{lang: req.getLocale()}``*
 
+  *action reply:*
+  ```
+  exits: {
+    success: {
+      viewTemplatePath: 'pages/homepage'
+    },
+  },
+  fn: async function (inputs, exits) {
+    return exits.success( { lang: this.req.getLocale() } );
+  }  
+  ```
+
 + ``$(document).ready(function(){
   io.socket.post('/', {}, function(ret){
     $('#socket-response').html("'" + ret.lang + "'");
@@ -31,9 +43,28 @@ socket request always returns default language code.
 });`` 
 
   *- returns json with ``{lang: req.getLocale()}``*
+  
+  *action reply:*
+  ```
+  exits: {
+    succsess: {
+      statusCode: 200,
+      responseType: 'jsonResponse'
+    }
+  },
+  fn: async function (inputs, exits) {
+    return exits.success({lang: this.req.getLocale()});
+  }
+  ```
 
+### How to reproduce this problem:
++ look what's your prefered browser language and then setup some another in i18n.js as defaultLocale (not identical with your browser language)
 
+### Exception:
++ both values in first two rows should be the same because they are obtained from the same page - but they are different :/
 
+### Problem:
++ io.socket always returns defaultLocale instead of browser language
 
 
 This app was originally generated on Thu May 09 2019 07:40:44 GMT+0200 (Central Europe Daylight Time) using Sails v1.1.0.
